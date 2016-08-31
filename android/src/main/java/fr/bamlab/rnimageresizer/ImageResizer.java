@@ -100,7 +100,7 @@ class ImageResizer {
                 Uri url = Uri.parse(imagePath);
                 InputStream input = cr.openInputStream(url);
                 image = BitmapFactory.decodeStream(input);
-                image = rotateExif(getRealPathFromURI(url, context), image);
+                image = rotateExif(RealPathUtil.getRealPathFromURI(context, url), image);
                 input.close();
             }
 
